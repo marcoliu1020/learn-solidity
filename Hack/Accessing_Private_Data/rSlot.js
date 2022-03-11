@@ -1,17 +1,31 @@
 const { ethers } = require("ethers");
-const Web3 = require("web3");
+const web3 = require("web3");
 
 const url = "http://127.0.0.1:7545";
-const contracAddr = "0xf62506D3415252e1B39F06e1f1B3002C2DDc0c9B";
+const contracAddr = "0xbc66f9045e2C095e05946a6715Bc38acAC7190b2";
 
 // ethers
-// const providerEthers = new ethers.providers.JsonRpcProvider(url);
+const providerEthers = new ethers.providers.JsonRpcProvider(url);
 
 // web3
-const providerWeb3 = new Web3(url);
+const providerWeb3 = new web3(url);
 
 (async function () {
   console.log();
+
+  // var slot = 0;
+  // var txt = await providerEthers.getStorageAt(contracAddr, slot); // slot 1
+  // console.log(txt)
+  // var slot = 1;
+  // var txt = await providerEthers.getStorageAt(contracAddr, slot); // slot 1
+  // console.log(txt)
+  // var slot = 2;
+  // var txt = await providerEthers.getStorageAt(contracAddr, slot); // slot 1
+  // console.log(txt)
+  // var slot = 3;
+  // var txt = await providerEthers.getStorageAt(contracAddr, slot); // slot 1
+  // console.log(txt) // error reason : 'hex data is odd-length' 
+  // return 
 
   var slot = 0;
   var txt = await providerWeb3.eth.getStorageAt(contracAddr, slot); // slot 1
